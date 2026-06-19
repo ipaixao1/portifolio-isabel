@@ -1,0 +1,47 @@
+<section id="contato" class="area">
+  <div class="area-node">
+    <div class="area-node-ring" id="node-contato">
+      <div class="area-node-dot"></div>
+    </div>
+  </div>
+  <p class="area-label">ÁREA 04 — NEXO</p>
+
+  <div class="area-container">
+    <div class="area-header reveal">
+      <span class="area-eyebrow">// CONTATO</span>
+      <h2 class="area-title">Encontre a Tecelã</h2>
+      <div class="area-ornament">
+        <div class="area-ornament-line"></div>
+        <div class="area-ornament-gem"></div>
+        <div class="area-ornament-line"></div>
+      </div>
+    </div>
+
+    <div class="contato-inner">
+      <p class="contato-text reveal">
+        Aberta a oportunidades, colaborações e novos desafios.
+        Se você tem um projeto interessante — ou só quer trocar uma ideia
+        sobre desenvolvimento e jogos — é só chamar.
+      </p>
+
+      <div class="contact-grid reveal">
+        @for (link of links; track link.label) {
+          <a [href]="link.url" target="_blank" class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(216,202,180,0.2)" stroke-width="0.8"/>
+                <path [attr.d]="link.iconPath" fill="rgba(216,202,180,0.7)" stroke="none"/>
+              </svg>
+            </div>
+            <span class="contact-card-name">{{ link.label }}</span>
+            <span class="contact-card-value">{{ link.value }}</span>
+          </a>
+        }
+      </div>
+
+      <div class="reveal cta-wrap">
+        <a [href]="'mailto:' + email" class="btn-game">◈ ENVIAR MENSAGEM</a>
+      </div>
+    </div>
+  </div>
+</section>

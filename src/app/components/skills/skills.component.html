@@ -1,0 +1,38 @@
+<section id="skills" class="area">
+  <div class="area-node">
+    <div class="area-node-ring" id="node-skills">
+      <div class="area-node-dot"></div>
+    </div>
+  </div>
+  <p class="area-label">ÁREA 02 — HABILIDADES</p>
+
+  <div class="area-container">
+    <div class="area-header reveal">
+      <span class="area-eyebrow">// ARSENAL</span>
+      <h2 class="area-title">Equipamentos Desbloqueados</h2>
+      <div class="area-ornament">
+        <div class="area-ornament-line"></div>
+        <div class="area-ornament-gem"></div>
+        <div class="area-ornament-line"></div>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      @for (card of cards; track card.name) {
+        <div class="skill-card reveal">
+          <div class="skill-card-head">
+            <svg class="skill-card-icon" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+              <path [attr.d]="card.iconPath" fill="none" [attr.stroke]="card.color" stroke-width="1"/>
+            </svg>
+            <span class="skill-card-name" [style.color]="card.color">{{ card.name }}</span>
+          </div>
+          <div class="skill-tags">
+            @for (tag of card.tags; track tag) {
+              <span class="skill-tag">{{ tag }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

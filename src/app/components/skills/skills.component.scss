@@ -1,0 +1,117 @@
+#skills {
+  background: var(--bg);
+  border-top: 1px solid rgba(216, 202, 180, 0.04);
+}
+
+.area-node {
+  position: absolute;
+  left: 22px; top: 5rem;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}
+
+.area-node-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(216, 202, 180, 0.3);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg);
+  transition: border-color 0.3s, background 0.3s;
+
+  &.active {
+    border-color: var(--red);
+    background: rgba(200, 16, 46, 0.15);
+    .area-node-dot { background: var(--red); }
+  }
+}
+
+.area-node-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cream2);
+  transition: background 0.3s;
+}
+
+.area-label {
+  position: absolute;
+  left: 68px; top: 5.4rem;
+  font-family: var(--ff-pixel);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--cream2);
+  white-space: nowrap;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+}
+
+.skill-card {
+  background: var(--bg2);
+  border: 1px solid var(--ui-border);
+  padding: 1.6rem 1.4rem;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: border-color 0.3s, background 0.3s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(200, 16, 46, 0.04) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover {
+    border-color: rgba(200, 16, 46, 0.4);
+    background: var(--bg3);
+    &::before { opacity: 1; }
+  }
+}
+
+.skill-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.1rem;
+}
+
+.skill-card-icon {
+  width: 28px; height: 28px;
+  flex-shrink: 0;
+}
+
+.skill-card-name {
+  font-family: var(--ff-pixel);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skill-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgba(216, 202, 180, 0.12);
+  color: var(--cream2);
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover {
+    border-color: var(--red);
+    color: var(--cream);
+  }
+}
+
+@media (max-width: 900px) {
+  .area-node, .area-label { display: none; }
+}

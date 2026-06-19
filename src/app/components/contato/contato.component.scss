@@ -1,0 +1,112 @@
+#contato {
+  background: var(--bg2);
+  border-top: 1px solid rgba(216, 202, 180, 0.05);
+}
+
+.area-node {
+  position: absolute;
+  left: 22px; top: 5rem;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}
+
+.area-node-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(216, 202, 180, 0.3);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg);
+  transition: border-color 0.3s, background 0.3s;
+
+  &.active {
+    border-color: var(--red);
+    background: rgba(200, 16, 46, 0.15);
+    .area-node-dot { background: var(--red); }
+  }
+}
+
+.area-node-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cream2);
+  transition: background 0.3s;
+}
+
+.area-label {
+  position: absolute;
+  left: 68px; top: 5.4rem;
+  font-family: var(--ff-pixel);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--cream2);
+  white-space: nowrap;
+}
+
+.contato-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contato-text {
+  font-size: 0.95rem;
+  color: var(--cream2);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card {
+  background: var(--bg3);
+  border: 1px solid var(--ui-border);
+  padding: 1.4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  transition: border-color 0.3s, background 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    border-color: rgba(200, 16, 46, 0.45);
+    background: rgba(200, 16, 46, 0.06);
+    .contact-card-name { color: var(--red); }
+  }
+}
+
+.contact-card-icon {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.contact-card-name {
+  font-family: var(--ff-pixel);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--cream2);
+  transition: color 0.2s;
+}
+
+.contact-card-value {
+  font-size: 0.72rem;
+  color: var(--cream2);
+  opacity: 0.7;
+  text-align: center;
+  word-break: break-all;
+}
+
+.cta-wrap {
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .area-node, .area-label { display: none; }
+}
