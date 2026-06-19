@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   template: `
     <footer>
-      <p class="footer-text">© 2025 ISABEL.DEV — TECIDO COM PROPÓSITO, LINHA POR LINHA</p>
+      <p class="footer-text">© 2026 ISABEL.PAIXÃO — TECIDO COM PROPÓSITO, LINHA POR LINHA</p>
       <div class="footer-gem"></div>
       <p class="footer-text footer-right">HOLLOW KNIGHT FAN ◈ ADS</p>
     </footer>
