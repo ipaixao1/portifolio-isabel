@@ -1,31 +1,32 @@
 #sobre {
   background:
-    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(13, 6, 20, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(13,6,20,0.9) 0%, transparent 100%),
     var(--bg2);
-  border-top: 1px solid rgba(216, 202, 180, 0.05);
+  border-top: 1px solid rgba(216,202,180,0.05);
 }
 
-/* World map node */
 .area-node {
   position: absolute;
   left: 22px; top: 5rem;
   width: 36px; height: 36px;
-  display: flex; align-items: center; justify-content: center;
+  display: none;
+  align-items: center; justify-content: center;
   z-index: 10;
+
+  @media (min-width: 900px) { display: flex; }
 }
 
 .area-node-ring {
   width: 36px; height: 36px;
-  border: 1px solid rgba(216, 202, 180, 0.3);
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  border: 1px solid rgba(216,202,180,0.3);
+  clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%);
   display: flex; align-items: center; justify-content: center;
   background: var(--bg);
   transition: border-color 0.3s, background 0.3s;
 
   &.active {
     border-color: var(--red);
-    background: rgba(200, 16, 46, 0.15);
-
+    background: rgba(200,16,46,0.15);
     .area-node-dot { background: var(--red); }
   }
 }
@@ -45,39 +46,44 @@
   letter-spacing: 0.2em;
   color: var(--cream2);
   white-space: nowrap;
+  display: none;
+
+  @media (min-width: 900px) { display: block; }
 }
 
 .sobre-layout {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
   align-items: center;
+
+  @media (min-width: 700px) { grid-template-columns: 220px 1fr; gap: 3rem; }
+  @media (min-width: 900px) { grid-template-columns: 1fr 1.6fr;  gap: 4rem; }
 }
 
 .sobre-text {
   p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.8;
     color: var(--cream2);
-    margin-bottom: 1.1rem;
+    margin-bottom: 1rem;
+
+    @media (min-width: 600px) { font-size: 0.95rem; }
 
     strong { color: var(--cream); font-weight: 500; }
     em     { color: var(--red);   font-style: normal; }
 
     &.quote {
       font-family: var(--ff-title);
-      font-size: 1rem;
+      font-size: 0.95rem;
       letter-spacing: 0.05em;
       color: var(--cream);
       border-left: 2px solid var(--red);
       padding-left: 1rem;
-      margin: 1.5rem 0;
+      margin: 1.2rem 0;
       font-style: italic;
+
+      @media (min-width: 600px) { font-size: 1rem; margin: 1.5rem 0; }
     }
   }
-}
-
-@media (max-width: 900px) {
-  .sobre-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-  .area-node, .area-label { display: none; }
 }

@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 
 export interface Project {
-  name: string;
-  desc: string;
-  techs: string[];
-  demoUrl: string;
+  name:      string;
+  desc:      string;
+  techs:     string[];
+  demoUrl:   string;
   githubUrl: string;
-  featured: boolean;
-  badge?: string;
+  featured:  boolean;
+  badge?:    string;
+  tcc?:      boolean;
 }
 
 @Component({
@@ -28,23 +29,33 @@ export class ProjetosComponent {
       badge: '★ DESTAQUE',
     },
     {
-      name: 'Em Construção',
-      desc: 'Novo projeto a caminho. Adicione título, descrição, tecnologias e links quando estiver pronto.',
-      techs: ['Em breve'],
+      name: 'Brisa Vinícola',
+      desc: 'E-commerce sofisticado de vinhos desenvolvido como TCC do curso técnico de Informática para a Internet. Cadastro de produtos, carrinho de compras, autenticação de usuários e painel administrativo — do front ao banco de dados.',
+      techs: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'XAMPP'],
       demoUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/ipaixao1/TCC---BrisaVinicola',
       featured: false,
+      tcc: true,
     },
     {
-      name: 'Em Construção',
-      desc: 'Espaço reservado para mostrar sua versatilidade com diferentes stacks e tipos de projeto.',
-      techs: ['Em breve'],
+      name: 'Impressora Elgin',
+      desc: 'Aplicação Java desenvolvida no 2º semestre da faculdade para controle de impressora térmica Elgin via menu interativo. Funcionalidades: impressão de texto, QR Code, código de barras, nota fiscal e corte de papel — comunicação direta com o hardware.',
+      techs: ['Java', 'ESC/POS', 'OOP'],
       demoUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/anna-clara6/impressora-elgin-final',
+      featured: false,
+      badge: '◈ FACULDADE',
+    },
+    {
+      name: 'Portfolio Silksong',
+      desc: 'Este próprio portfólio! Desenvolvido com tema em Hollow Knight: Silksong, com cursor customizado, fios de seda interativos no canvas, pixel art animada da Hornet, HUD estilo game e animações scroll reveal.',
+      techs: ['Angular 17', 'TypeScript', 'SCSS', 'Canvas 2D', 'Vercel'],
+      demoUrl: '#',
+      githubUrl: 'https://github.com/ipaixao1/portifolio-isabel',
       featured: false,
     },
   ];
 
-  get featuredProject(): Project   { return this.projects.find(p => p.featured)!; }
-  get otherProjects(): Project[]   { return this.projects.filter(p => !p.featured); }
+  get featuredProject(): Project { return this.projects.find(p => p.featured)!; }
+  get otherProjects():   Project[] { return this.projects.filter(p => !p.featured); }
 }

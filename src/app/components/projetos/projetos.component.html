@@ -18,11 +18,11 @@
     </div>
 
     <div class="projetos-grid">
-      <!-- FEATURED -->
+
+      <!-- ══ BAIANAr — FEATURED ══ -->
       <div class="proj-card featured reveal">
         <div class="proj-visual">
           <span class="proj-badge">{{ featuredProject.badge }}</span>
-          <!-- BAIANAr SVG illustration -->
           <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
             <rect width="500" height="300" fill="#08030F"/>
             <g opacity="0.06">
@@ -95,39 +95,246 @@
             }
           </div>
           <div class="proj-links">
-            <a [href]="featuredProject.demoUrl" class="proj-link">▶ Demo</a>
+            <a [href]="featuredProject.demoUrl" target="_blank" class="proj-link">▶ Demo</a>
             <a [href]="featuredProject.githubUrl" target="_blank" class="proj-link">◈ GitHub</a>
           </div>
         </div>
       </div>
 
-      <!-- OTHER PROJECTS -->
-      @for (proj of otherProjects; track proj.name; let i = $index) {
-        <div class="proj-card reveal">
-          <div class="proj-visual">
-            <svg viewBox="0 0 280 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-              <rect width="280" height="150" fill="#08030F"/>
-              <circle cx="140" cy="75" r="45" fill="none" [attr.stroke]="i === 0 ? 'rgba(123,111,200,0.12)' : 'rgba(200,164,74,0.12)'" stroke-width="1"/>
-              <circle cx="140" cy="75" r="25" fill="none" [attr.stroke]="i === 0 ? 'rgba(123,111,200,0.2)' : 'rgba(200,164,74,0.2)'"  stroke-width="1"/>
-              <circle cx="140" cy="75" r="8"  [attr.fill]="i === 0 ? 'rgba(123,111,200,0.3)' : 'rgba(200,164,74,0.3)'"/>
-              <text x="140" y="135" text-anchor="middle" font-family="VT323" font-size="11" fill="rgba(216,202,180,0.3)" letter-spacing="3">PROJETO EM BREVE</text>
-            </svg>
+      <!-- ══ BRISA VINÍCOLA ══ -->
+      <div class="proj-card reveal">
+        <div class="proj-visual">
+          <span class="proj-badge tcc-badge">◈ TCC</span>
+          <!-- Wine e-commerce SVG illustration -->
+          <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <rect width="280" height="160" fill="#08030F"/>
+            <!-- Ambient glow — warm wine purple -->
+            <ellipse cx="140" cy="80" r="70" fill="rgba(120,40,80,0.12)"/>
+            <!-- Wine bottle silhouette -->
+            <g transform="translate(108,15)">
+              <!-- bottle neck -->
+              <rect x="18" y="0" width="8" height="20" rx="2" fill="#2A1228"/>
+              <!-- cork -->
+              <rect x="19" y="0" width="6" height="6" rx="1" fill="rgba(200,164,74,0.7)"/>
+              <!-- bottle shoulder -->
+              <path d="M10 20 Q10 30 8 35 L8 105 Q8 112 22 112 L22 112 Q36 112 36 105 L36 35 Q34 30 34 20 Z" fill="#1A0A20"/>
+              <!-- bottle body highlight -->
+              <path d="M14 38 L14 102 Q14 108 22 108" fill="none" stroke="rgba(120,40,80,0.4)" stroke-width="1.5"/>
+              <!-- label -->
+              <rect x="10" y="48" width="24" height="38" rx="2" fill="rgba(80,20,50,0.8)" stroke="rgba(200,164,74,0.3)" stroke-width="0.5"/>
+              <!-- label text lines -->
+              <rect x="13" y="53" width="18" height="2" rx="1" fill="rgba(200,164,74,0.5)"/>
+              <rect x="14" y="58" width="16" height="1.5" rx="1" fill="rgba(216,202,180,0.3)"/>
+              <rect x="13" y="62" width="18" height="1.5" rx="1" fill="rgba(216,202,180,0.2)"/>
+              <!-- decorative grape cluster on label -->
+              <circle cx="18" cy="72" r="3"   fill="rgba(140,50,100,0.6)"/>
+              <circle cx="22" cy="72" r="3"   fill="rgba(140,50,100,0.6)"/>
+              <circle cx="20" cy="68.5" r="3" fill="rgba(140,50,100,0.6)"/>
+              <circle cx="20" cy="75.5" r="2" fill="rgba(140,50,100,0.4)"/>
+              <!-- shine -->
+              <path d="M12 30 Q12 60 12 85" fill="none" stroke="rgba(216,202,180,0.08)" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <!-- Wine glass -->
+            <g transform="translate(162,20)">
+              <!-- glass bowl -->
+              <path d="M6 0 Q0 25 4 40 Q8 52 20 54 Q32 52 36 40 Q40 25 34 0 Z" fill="rgba(180,100,140,0.12)" stroke="rgba(216,202,180,0.2)" stroke-width="0.6"/>
+              <!-- wine fill -->
+              <path d="M8 28 Q6 38 8 42 Q12 52 20 53 Q28 52 32 42 Q34 38 32 28 Z" fill="rgba(120,30,70,0.55)"/>
+              <!-- glass stem -->
+              <line x1="20" y1="54" x2="20" y2="95" stroke="rgba(216,202,180,0.25)" stroke-width="1.2"/>
+              <!-- base -->
+              <ellipse cx="20" cy="96" rx="14" ry="3" fill="none" stroke="rgba(216,202,180,0.2)" stroke-width="0.8"/>
+              <!-- glass shine -->
+              <path d="M10 8 Q8 20 9 32" fill="none" stroke="rgba(216,202,180,0.18)" stroke-width="1" stroke-linecap="round"/>
+            </g>
+            <!-- Stars / decorative dots -->
+            <circle cx="60"  cy="30"  r="1" fill="rgba(200,164,74,0.4)"/>
+            <circle cx="220" cy="50"  r="1" fill="rgba(200,164,74,0.3)"/>
+            <circle cx="50"  cy="120" r="1" fill="rgba(200,164,74,0.3)"/>
+            <circle cx="240" cy="130" r="1" fill="rgba(200,164,74,0.25)"/>
+            <!-- Silk threads (subtle) -->
+            <path d="M40 40 Q80 55 108 70"   fill="none" stroke="rgba(216,202,180,0.08)" stroke-width="0.6"/>
+            <path d="M240 60 Q210 75 202 90" fill="none" stroke="rgba(216,202,180,0.08)" stroke-width="0.6"/>
+            <!-- Title -->
+            <text x="140" y="148" text-anchor="middle" font-family="'Cinzel',serif" font-size="11" font-weight="600" fill="rgba(200,164,74,0.7)" letter-spacing="4">BRISA VINÍCOLA</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-name">Brisa Vinícola</h3>
+          <p class="proj-desc">E-commerce sofisticado de vinhos desenvolvido como TCC do curso técnico de Informática para a Internet. Cadastro de produtos, carrinho de compras, autenticação de usuários e painel administrativo — do front ao banco de dados.</p>
+          <div class="proj-techs">
+            <span class="proj-tech">HTML</span>
+            <span class="proj-tech">CSS</span>
+            <span class="proj-tech">JavaScript</span>
+            <span class="proj-tech">PHP</span>
+            <span class="proj-tech">MySQL</span>
+            <span class="proj-tech">XAMPP</span>
           </div>
-          <div class="proj-body">
-            <h3 class="proj-name">{{ proj.name }}</h3>
-            <p class="proj-desc">{{ proj.desc }}</p>
-            <div class="proj-techs">
-              @for (tech of proj.techs; track tech) {
-                <span class="proj-tech">{{ tech }}</span>
-              }
-            </div>
-            <div class="proj-links">
-              <a [href]="proj.demoUrl" class="proj-link">▶ Demo</a>
-              <a [href]="proj.githubUrl" target="_blank" class="proj-link">◈ GitHub</a>
-            </div>
+          <div class="proj-links">
+            <a href="https://github.com/ipaixao1" target="_blank" class="proj-link">◈ GitHub</a>
           </div>
         </div>
-      }
+      </div>
+
+      <!-- ══ IMPRESSORA ELGIN ══ -->
+      <div class="proj-card reveal">
+        <div class="proj-visual">
+          <span class="proj-badge faculdade-badge">◈ FACULDADE</span>
+          <!-- Thermal printer SVG illustration -->
+          <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <rect width="280" height="160" fill="#08030F"/>
+            <!-- Ambient glow — Java orange -->
+            <ellipse cx="140" cy="85" r="65" fill="rgba(90,140,200,0.07)"/>
+            <!-- Printer body -->
+            <rect x="70" y="50" width="140" height="75" rx="5" fill="#12061C" stroke="rgba(123,111,200,0.3)" stroke-width="0.8"/>
+            <!-- Printer top slot (paper out) -->
+            <rect x="85" y="50" width="110" height="6" rx="1" fill="#0A0318" stroke="rgba(123,111,200,0.2)" stroke-width="0.5"/>
+            <!-- Paper coming out -->
+            <rect x="100" y="28" width="80" height="30" rx="1" fill="rgba(216,202,180,0.08)" stroke="rgba(216,202,180,0.15)" stroke-width="0.5"/>
+            <!-- Printed lines on paper -->
+            <rect x="106" y="32" width="50" height="1.5" rx="0.5" fill="rgba(216,202,180,0.4)"/>
+            <rect x="106" y="36" width="35" height="1.5" rx="0.5" fill="rgba(216,202,180,0.3)"/>
+            <!-- QR code on paper (mini) -->
+            <g transform="translate(116,40)">
+              <rect width="12" height="12" fill="none" stroke="rgba(216,202,180,0.25)" stroke-width="0.5"/>
+              <rect x="1"  y="1"  width="3" height="3" fill="rgba(216,202,180,0.5)"/>
+              <rect x="8"  y="1"  width="3" height="3" fill="rgba(216,202,180,0.5)"/>
+              <rect x="1"  y="8"  width="3" height="3" fill="rgba(216,202,180,0.5)"/>
+              <rect x="5"  y="4"  width="2" height="2" fill="rgba(216,202,180,0.4)"/>
+              <rect x="8"  y="7"  width="2" height="2" fill="rgba(216,202,180,0.4)"/>
+              <rect x="5"  y="9"  width="2" height="2" fill="rgba(216,202,180,0.35)"/>
+              <rect x="9"  y="9"  width="2" height="2" fill="rgba(216,202,180,0.35)"/>
+            </g>
+            <!-- Barcode on paper -->
+            <g transform="translate(136,40)">
+              <rect x="0"  y="0" width="1.5" height="11" fill="rgba(216,202,180,0.5)"/>
+              <rect x="3"  y="0" width="1"   height="11" fill="rgba(216,202,180,0.4)"/>
+              <rect x="5"  y="0" width="2"   height="11" fill="rgba(216,202,180,0.5)"/>
+              <rect x="9"  y="0" width="1"   height="11" fill="rgba(216,202,180,0.4)"/>
+              <rect x="11" y="0" width="1.5" height="11" fill="rgba(216,202,180,0.5)"/>
+              <rect x="14" y="0" width="1"   height="11" fill="rgba(216,202,180,0.4)"/>
+              <rect x="16" y="0" width="2"   height="11" fill="rgba(216,202,180,0.5)"/>
+            </g>
+            <!-- Printer front panel -->
+            <rect x="70" y="95" width="140" height="30" rx="3" fill="#0F0520" stroke="rgba(123,111,200,0.15)" stroke-width="0.5"/>
+            <!-- Power LED -->
+            <circle cx="90" cy="110" r="3.5" fill="rgba(123,111,200,0.6)"/>
+            <circle cx="90" cy="110" r="2"   fill="rgba(150,140,220,0.9)"/>
+            <!-- Feed button -->
+            <rect x="100" y="105" width="22" height="10" rx="2" fill="rgba(123,111,200,0.15)" stroke="rgba(123,111,200,0.3)" stroke-width="0.5"/>
+            <text x="111" y="112.5" text-anchor="middle" font-family="VT323" font-size="5" fill="rgba(216,202,180,0.5)" letter-spacing="0.5">FEED</text>
+            <!-- Cut button -->
+            <rect x="128" y="105" width="22" height="10" rx="2" fill="rgba(200,16,46,0.1)" stroke="rgba(200,16,46,0.25)" stroke-width="0.5"/>
+            <text x="139" y="112.5" text-anchor="middle" font-family="VT323" font-size="5" fill="rgba(200,16,46,0.6)" letter-spacing="0.5">CUT</text>
+            <!-- USB port -->
+            <rect x="185" y="106" width="14" height="8" rx="1" fill="#0A0318" stroke="rgba(216,202,180,0.15)" stroke-width="0.5"/>
+            <!-- Java logo hint (coffee cup tiny) -->
+            <g transform="translate(220,100)">
+              <path d="M2 0 Q0 5 2 8 L10 8 Q12 5 10 0 Z" fill="rgba(90,140,200,0.2)" stroke="rgba(90,140,200,0.4)" stroke-width="0.5"/>
+              <path d="M10 3 Q14 3 14 5 Q14 7 10 7" fill="none" stroke="rgba(90,140,200,0.4)" stroke-width="0.8"/>
+              <rect x="1" y="8" width="10" height="1.5" rx="0.5" fill="rgba(90,140,200,0.35)"/>
+            </g>
+            <!-- Menu lines (terminal feel) -->
+            <rect x="78" y="60" width="60" height="2" rx="1" fill="rgba(123,111,200,0.2)"/>
+            <rect x="78" y="65" width="45" height="2" rx="1" fill="rgba(123,111,200,0.15)"/>
+            <rect x="78" y="70" width="55" height="2" rx="1" fill="rgba(123,111,200,0.12)"/>
+            <rect x="78" y="75" width="40" height="2" rx="1" fill="rgba(123,111,200,0.1)"/>
+            <!-- cursor blink -->
+            <rect x="78" y="80" width="6" height="2" rx="0.5" fill="rgba(123,111,200,0.5)"/>
+            <!-- Title -->
+            <text x="140" y="152" text-anchor="middle" font-family="'Cinzel',serif" font-size="9" font-weight="600" fill="rgba(123,111,200,0.6)" letter-spacing="3">IMPRESSORA ELGIN</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-name">Impressora Elgin</h3>
+          <p class="proj-desc">Aplicação Java desenvolvida no 2º semestre da faculdade para controle de impressora térmica Elgin via menu interativo. Funcionalidades: impressão de texto, QR Code, código de barras, nota fiscal e corte de papel — comunicação direta com o hardware.</p>
+          <div class="proj-techs">
+            <span class="proj-tech">Java</span>
+            <span class="proj-tech">ESC/POS</span>
+            <span class="proj-tech">OOP</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/anna-clara6/impressora-elgin-final" target="_blank" class="proj-link">◈ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ PORTFOLIO SILKSONG ══ -->
+      <div class="proj-card reveal">
+        <div class="proj-visual">
+          <!-- Portfolio itself SVG -->
+          <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <rect width="280" height="160" fill="#08030F"/>
+            <!-- Ambient red glow -->
+            <ellipse cx="140" cy="80" r="65" fill="rgba(200,16,46,0.06)"/>
+            <!-- Browser window mockup -->
+            <rect x="30" y="20" width="220" height="125" rx="4" fill="#0D0614" stroke="rgba(200,16,46,0.25)" stroke-width="0.8"/>
+            <!-- Browser bar -->
+            <rect x="30" y="20" width="220" height="18" rx="4" fill="rgba(200,16,46,0.15)"/>
+            <!-- Browser dots -->
+            <circle cx="42" cy="29" r="3" fill="rgba(200,16,46,0.6)"/>
+            <circle cx="52" cy="29" r="3" fill="rgba(200,164,74,0.4)"/>
+            <circle cx="62" cy="29" r="3" fill="rgba(216,202,180,0.2)"/>
+            <!-- URL bar -->
+            <rect x="72" y="24" width="120" height="10" rx="2" fill="rgba(216,202,180,0.06)"/>
+            <text x="132" y="31.5" text-anchor="middle" font-family="VT323" font-size="6" fill="rgba(216,202,180,0.35)" letter-spacing="0.5">isabel.dev</text>
+            <!-- HUD bar inside browser -->
+            <rect x="30" y="38" width="220" height="12" fill="rgba(6,3,10,0.9)" stroke="rgba(216,202,180,0.05)" stroke-width="0.5"/>
+            <rect x="34" y="41" width="30" height="6" rx="1" fill="rgba(216,202,180,0.08)"/>
+            <rect x="90" y="41" width="22" height="6" rx="1" fill="rgba(216,202,180,0.06)"/>
+            <rect x="116" y="41" width="22" height="6" rx="1" fill="rgba(216,202,180,0.06)"/>
+            <rect x="142" y="41" width="22" height="6" rx="1" fill="rgba(216,202,180,0.06)"/>
+            <rect x="168" y="41" width="22" height="6" rx="1" fill="rgba(216,202,180,0.06)"/>
+            <!-- Online dot -->
+            <circle cx="238" cy="44" r="2.5" fill="rgba(200,16,46,0.7)"/>
+            <!-- Page content: mini hornet + silk threads -->
+            <g transform="translate(80,55)">
+              <!-- tiny hornet cape -->
+              <path d="M10 14 Q4 22 5 30 Q10 28 15 30 Q20 28 25 30 Q26 22 20 14 Z" fill="rgba(139,10,31,0.7)"/>
+              <!-- tiny mask -->
+              <ellipse cx="15" cy="11" rx="7" ry="8" fill="rgba(216,202,180,0.75)"/>
+              <!-- tiny eyes -->
+              <ellipse cx="12" cy="12" rx="2" ry="2.5" fill="rgba(6,3,10,0.9)"/>
+              <ellipse cx="18" cy="12" rx="2" ry="2.5" fill="rgba(6,3,10,0.9)"/>
+              <!-- tiny horns -->
+              <line x1="11" y1="4" x2="9"  y2="0" stroke="rgba(216,202,180,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="19" y1="4" x2="21" y2="0" stroke="rgba(216,202,180,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+            </g>
+            <!-- Silk threads on page -->
+            <path d="M55 70  Q80 65 90 72"   fill="none" stroke="rgba(216,202,180,0.2)" stroke-width="0.6"/>
+            <path d="M55 80  Q70 78 85 82"   fill="none" stroke="rgba(216,202,180,0.15)" stroke-width="0.6"/>
+            <path d="M120 58 Q160 52 200 60" fill="none" stroke="rgba(200,16,46,0.2)"   stroke-width="0.6"/>
+            <path d="M120 68 Q155 65 200 70" fill="none" stroke="rgba(216,202,180,0.12)" stroke-width="0.6"/>
+            <path d="M120 78 Q150 76 200 80" fill="none" stroke="rgba(216,202,180,0.1)"  stroke-width="0.6"/>
+            <!-- Skill tags mockup -->
+            <rect x="35"  y="100" width="38" height="8" rx="1" fill="rgba(200,16,46,0.15)" stroke="rgba(200,16,46,0.3)" stroke-width="0.5"/>
+            <rect x="77"  y="100" width="42" height="8" rx="1" fill="rgba(200,16,46,0.1)"  stroke="rgba(200,16,46,0.2)" stroke-width="0.5"/>
+            <rect x="123" y="100" width="30" height="8" rx="1" fill="rgba(200,16,46,0.08)" stroke="rgba(200,16,46,0.2)" stroke-width="0.5"/>
+            <rect x="157" y="100" width="45" height="8" rx="1" fill="rgba(200,16,46,0.08)" stroke="rgba(200,16,46,0.2)" stroke-width="0.5"/>
+            <!-- Canvas threads (decorative) -->
+            <path d="M35 115 Q90 108 140 115 Q190 122 245 115" fill="none" stroke="rgba(216,202,180,0.08)" stroke-width="0.7"/>
+            <path d="M35 122 Q100 116 140 122 Q185 128 245 122" fill="none" stroke="rgba(200,16,46,0.08)"   stroke-width="0.7"/>
+            <!-- Title -->
+            <text x="140" y="152" text-anchor="middle" font-family="'Cinzel',serif" font-size="9" font-weight="600" fill="rgba(216,202,180,0.5)" letter-spacing="3">PORTFOLIO SILKSONG</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-name">Portfolio Silksong</h3>
+          <p class="proj-desc">Este próprio portfólio! Desenvolvido com tema em Hollow Knight: Silksong, com cursor customizado, fios de seda interativos no canvas, pixel art animada da Hornet, HUD estilo game e animações scroll reveal.</p>
+          <div class="proj-techs">
+            <span class="proj-tech">Angular 17</span>
+            <span class="proj-tech">TypeScript</span>
+            <span class="proj-tech">SCSS</span>
+            <span class="proj-tech">Canvas 2D</span>
+            <span class="proj-tech">Vercel</span>
+          </div>
+          <div class="proj-links">
+            <a href="#" class="proj-link">▶ Demo</a>
+            <a href="https://github.com/ipaixao1" target="_blank" class="proj-link">◈ GitHub</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

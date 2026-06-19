@@ -1,43 +1,30 @@
 /* ═══════════════════════════════════════════════════════
    GLOBAL STYLES — Portfolio Silksong
-   Todos os tokens, reset e estilos base ficam aqui.
-   Os estilos específicos de cada componente ficam nos
-   respectivos arquivos .scss dos components.
 ═══════════════════════════════════════════════════════ */
 
 /* ── DESIGN TOKENS ── */
 :root {
-  --bg:         #06030A;
-  --bg2:        #0D0614;
-  --bg3:        #140A1E;
-  --red:        #C8102E;
-  --red2:       #8B0A1F;
-  --red-glow:   rgba(200, 16, 46, 0.22);
-  --cream:      #D8CAB4;
-  --cream2:     #8A7D6E;
-  --lav:        #7B6FC8;
-  --lav2:       #4A406E;
-  --silk:       rgba(216, 202, 180, 0.45);
-  --gold:       #C8A44A;
-  --ui-border:  rgba(216, 202, 180, 0.1);
-  --ff-title:   'Cinzel', serif;
-  --ff-body:    'Inter', sans-serif;
-  --ff-pixel:   'VT323', monospace;
+  --bg:        #06030A;
+  --bg2:       #0D0614;
+  --bg3:       #140A1E;
+  --red:       #C8102E;
+  --red2:      #8B0A1F;
+  --red-glow:  rgba(200,16,46,0.22);
+  --cream:     #D8CAB4;
+  --cream2:    #8A7D6E;
+  --lav:       #7B6FC8;
+  --lav2:      #4A406E;
+  --silk:      rgba(216,202,180,0.45);
+  --gold:      #C8A44A;
+  --ui-border: rgba(216,202,180,0.1);
+  --ff-title:  'Cinzel', serif;
+  --ff-body:   'Inter', sans-serif;
+  --ff-pixel:  'VT323', monospace;
 }
 
 /* ── RESET ── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--cream);
@@ -47,48 +34,50 @@ body {
   overflow-x: hidden;
   cursor: none;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
+/* restore cursor on touch devices */
+@media (hover: none) { body { cursor: auto; } }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
 
 /* ── SHARED SECTION LAYOUT ── */
 .area {
   position: relative;
   z-index: 2;
-  padding: 6rem 2rem 5rem 2rem;
+  padding: 5rem 1.25rem 4rem;
+
+  @media (min-width: 600px)  { padding: 6rem 2rem 5rem; }
+  @media (min-width: 1200px) { padding: 7rem 2rem 6rem; }
 }
 
 .area-container {
   max-width: 1100px;
   margin: 0 auto;
+  width: 100%;
 }
 
 /* ── SHARED AREA HEADER ── */
 .area-header {
   text-align: center;
-  margin-bottom: 3.5rem;
-  padding-top: 1rem;
+  margin-bottom: 2.5rem;
+  padding-top: 0.5rem;
+
+  @media (min-width: 600px) { margin-bottom: 3.5rem; padding-top: 1rem; }
 }
 
 .area-eyebrow {
   font-family: var(--ff-pixel);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.3em;
   color: var(--red);
   margin-bottom: 0.6rem;
   display: block;
+
+  @media (min-width: 600px) { font-size: 0.85rem; }
 }
 
 .area-title {
   font-family: var(--ff-title);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.4rem, 5vw, 2.4rem);
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--cream);
@@ -101,57 +90,52 @@ img {
   gap: 1rem;
   margin-top: 1rem;
 }
-
 .area-ornament-line {
-  width: 60px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(200, 16, 46, 0.5), transparent);
+  width: 40px; height: 1px;
+  background: linear-gradient(to right,transparent,rgba(200,16,46,0.5),transparent);
+  @media (min-width: 600px) { width: 60px; }
 }
-
 .area-ornament-gem {
-  width: 8px;
-  height: 8px;
+  width: 8px; height: 8px;
   background: var(--red);
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%);
 }
 
 /* ── SHARED BUTTONS ── */
 .btn-game {
   font-family: var(--ff-pixel);
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
-  padding: 0.6rem 1.6rem;
+  padding: 0.55rem 1.3rem;
   border: 1px solid var(--red);
   color: var(--cream);
   background: var(--red2);
   cursor: pointer;
   display: inline-block;
-  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  clip-path: polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
   transition: background 0.2s, transform 0.15s;
+  -webkit-tap-highlight-color: transparent;
 
-  &:hover {
-    background: var(--red);
-    transform: translateY(-2px);
-  }
+  @media (min-width: 600px) { font-size: 1.1rem; padding: 0.6rem 1.6rem; }
+  &:hover { background: var(--red); transform: translateY(-2px); }
 }
 
 .btn-outline-game {
   font-family: var(--ff-pixel);
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
-  padding: 0.6rem 1.6rem;
-  border: 1px solid rgba(216, 202, 180, 0.2);
+  padding: 0.55rem 1.3rem;
+  border: 1px solid rgba(216,202,180,0.2);
   color: var(--cream2);
   background: transparent;
   cursor: pointer;
   display: inline-block;
-  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  clip-path: polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
   transition: color 0.2s, border-color 0.2s;
+  -webkit-tap-highlight-color: transparent;
 
-  &:hover {
-    color: var(--cream);
-    border-color: var(--cream);
-  }
+  @media (min-width: 600px) { font-size: 1.1rem; padding: 0.6rem 1.6rem; }
+  &:hover { color: var(--cream); border-color: var(--cream); }
 }
 
 /* ── REVEAL ANIMATION ── */
@@ -159,11 +143,7 @@ img {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;
-
-  &.visible {
-    opacity: 1;
-    transform: none;
-  }
+  &.visible { opacity: 1; transform: none; }
 }
 
 @keyframes fadeUp {
@@ -171,11 +151,11 @@ img {
   to   { opacity: 1; transform: none; }
 }
 
-/* ── RESPONSIVE HELPERS ── */
-@media (max-width: 900px) {
-  .area { padding: 4rem 1.5rem; }
-}
-
-@media (max-width: 600px) {
-  .area { padding: 3.5rem 1.25rem; }
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
 }
